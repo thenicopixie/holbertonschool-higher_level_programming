@@ -13,4 +13,4 @@ if __name__ == "__main__":
         exit(1)
     for j in op:
         if argv[2] == j:
-            print("{} {} {} = {}".format(a, argv[2], b, op[j](int(a, b))))
+            print("{:d} {} {:d} = {:d}".format(a, j, b, op[j](a, b)))
