@@ -38,6 +38,7 @@ File | Function Prototype | Description
 11-delete\_at.py | def delete\_at(my\_list=[], idx=0): | A function that deletes the item at a specific position in a list. If `idx` is negative or out of range, nothing chages (return the same list). Not allowed to import any module or use `pop()`.
 12-switch.py | ... | Complete the source code in order to switch value `a` and `b`. Code should be exactly five lines.
 13-is\_palindrome.c, lists.h | int is\_palindrome(listint\_t \*\*head); | A function that checks if a singly linked list is a palindrome. Return `0` if it is not a palindrome, `1` if it is a palindrome. An empty list is considered a palindrome.
+
 Source code for #12:
 ```
 #!/usr/bin/python3
