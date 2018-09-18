@@ -9,10 +9,10 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *temp;
-	int str[19000];
+	int str[3000];
 	int i, j;
 
-	if (!head)
+	if (!head || !(*head) || !(*head->next))
 		return (1);
 	temp = *head;
 	i = 0;
