@@ -16,9 +16,9 @@ class Square:
     def size(self, value):
         """"Setter for square size."""
         if type(value) is not int:
-            raise TypeError("size must be an integer")
+            raise TypeError('size must be an integer')
         elif value < 0:
-            raise ValueError("size must be >= 0")
+            raise ValueError('size must be >= 0')
         else:
             self.__size = value
 
@@ -33,7 +33,7 @@ class Square:
         if (type(value) is not tuple or type(value[0]) is not int or
                 type(value[1]) is not int or len(value) != 2 or
                 value[0] < 0 or value[1] < 0):
-            raise TypeError("position must be a tuple of 2 positive integers")
+            raise TypeError('position must be a tuple of 2 positive integers')
         else:
             self.__position = value
 
@@ -43,7 +43,7 @@ class Square:
 
     def my_print(self):
         """"Print the square to stdout."""
-        if self.__size <= 0:
+        if self.size <= 0:
             print()
         else:
             row = ' ' * self.position[0]
