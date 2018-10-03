@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""Add elements module"""
 
 def add_integer(a, b=98):
     """add_integer - adds two integers
