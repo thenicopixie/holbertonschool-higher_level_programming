@@ -22,6 +22,9 @@ SUCCESS:
     >>> say_my_name("[Cat]", "[Powers]")
     My name is [Cat] [Powers]
 
+    >>> say_my_name("", "Jills")
+    My name is Jills
+
 ERROR:
 
     Incorrect type:
