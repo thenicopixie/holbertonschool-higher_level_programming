@@ -14,9 +14,7 @@ SUCCESS:
     <BLANKLINE>
     Something else that rhymes with ten?
     <BLANKLINE>
-    Python is so cool!
-    <BLANKLINE>
-    Trust me.
+    Python is so cool! Trust me.
     <BLANKLINE>
 
 ERROR:
