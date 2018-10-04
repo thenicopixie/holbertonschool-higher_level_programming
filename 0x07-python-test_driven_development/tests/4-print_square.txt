@@ -39,14 +39,17 @@ ERRORS:
 
     >>> print_square('n')
     Traceback (most recent call last):
+    ...
     TypeError: size must be an integer
 
     >>> print_square(5.67)
     Traceback (most recent call last):
+    ...
     TypeError: size must be an integer
 
     Value Error:
 
     >>> print_square(-1)
     Traceback (most recent call last):
+    ...
     ValueError: size must be >= 0
