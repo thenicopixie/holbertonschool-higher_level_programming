@@ -23,7 +23,7 @@ SUCCESS:
     My name is [Cat] [Powers]
 
     >>> say_my_name("", "Jills")
-    My name is Jills
+    My name is  Jills
 
 ERROR:
 
