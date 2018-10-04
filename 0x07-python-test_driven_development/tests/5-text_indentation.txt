@@ -25,8 +25,10 @@ ERROR:
 
     >>> text_indentation(8675309)
     Traceback (most recent call last):
+    ...
     TypeError: text must be a string
 
     >>> text_indentation(None)
     Traceback (most recent call last):
+    ...
     TypeError: text must be a string
