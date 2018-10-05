@@ -31,6 +31,8 @@ SUCCESS
     <BLANKLINE>
     <BLANKLINE>
 
+    >>> text_indentation("      ")
+
     >>> text_indentation("?")
     ?
     <BLANKLINE>
