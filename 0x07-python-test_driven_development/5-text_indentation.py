@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module for text_indentation"""
 
+
 def text_indentation(text):
     """text_indentation - indent and print text according to cases
 

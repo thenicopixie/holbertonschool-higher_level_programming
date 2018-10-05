@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module to print string"""
 
+
 def say_my_name(first_name, last_name=""):
     """say_my_name - print string
 

@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Divide matrix elements module"""
 
+
 def matrix_divided(matrix, div):
     """matrix_divided - divied a matrix
 
@@ -11,8 +12,10 @@ def matrix_divided(matrix, div):
            new matrix with divided elements
     """
     error = "matrix must be a matrix (list of lists) of integers/floats"
-    if (type(matrix) is not list or matrix == [[]] or matrix == [] or
-    matrix is None):
+    if (
+        type(matrix) is not list or matrix == [[]] or
+        matrix == [] or matrix is None
+       ):
         raise TypeError(error)
     new_list = []
     if type(div) is not int and type(div) is not float or div is None:
