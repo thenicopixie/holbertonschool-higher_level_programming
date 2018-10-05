@@ -3,11 +3,16 @@
 
 Using "print_square"
 """
-Import:
+
+"""
+Import
+"""
 
     >>> print_square = __import__('4-print_square').print_square
 
-SUCCESS:
+"""
+SUCCESS
+"""
 
     >>> print_square(4)
     ####
@@ -33,9 +38,13 @@ SUCCESS:
     >>> print_square(1)
     #
 
-ERRORS:
+"""
+ERRORS
+"""
 
-    Type Error:
+    """
+    Type Error
+    """
 
     >>> print_square('n')
     Traceback (most recent call last):
@@ -47,7 +56,9 @@ ERRORS:
     ...
     TypeError: size must be an integer
 
-    Value Error:
+    """
+    Value Error
+    """
 
     >>> print_square(-1)
     Traceback (most recent call last):

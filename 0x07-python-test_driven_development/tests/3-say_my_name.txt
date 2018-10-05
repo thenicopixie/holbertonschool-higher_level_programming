@@ -1,14 +1,18 @@
-""" The "say_my_name" module
+"""Module to print name
 ============================
 
 Using "say_my_name"
 """
 
-Import:
+"""
+Import
+"""
 
     >>> say_my_name = __import__('3-say_my_name').say_my_name
 
-SUCCESS:
+"""
+SUCCESS
+"""
 
     >>> say_my_name("John", "Smith")
     My name is John Smith
@@ -25,7 +29,9 @@ SUCCESS:
     >>> say_my_name("", "Jills")
     My name is  Jills
 
-ERROR:
+"""
+ERROR
+"""
 
     Incorrect type:
 

@@ -4,10 +4,15 @@
 Using "text_indentation"
 """
 
-Import:
+"""
+Import
+"""
+
     >>> text_indentation = __import__('5-text_indentation').text_indentation
 
-SUCCESS:
+"""
+SUCCESS
+"""
 
     >>> text_indentation("Hello darkness my old friend. Something else that rhymes with ten? Python is so cool! Trust me.")
     Hello darkness my old friend.
@@ -17,9 +22,50 @@ SUCCESS:
     Python is so cool! Trust me.
     <BLANKLINE>
 
-ERROR:
+    >>> text_indentation("")
 
-    Incorrect Type:
+    >>> text_indentation("Lorem    ?    \n\n\n")
+    Lorem    ?
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+
+    >>> text_indentation("?")
+    ?
+    <BLANKLINE>
+
+    >>> text_indentation(":")
+    :
+    <BLANKLINE>
+
+    >>> text_indentation(".")
+    .
+    <BLANKLINE>
+
+    >>> text_indentation("\n.")
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+
+    >>> text_indentation("\n")
+    <BLANKLINE>
+
+    >>> text_indentation("...")
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+
+"""
+ERROR
+"""
+
+    """
+    Incorrect Type
+    """
 
     >>> text_indentation(8675309)
     Traceback (most recent call last):
