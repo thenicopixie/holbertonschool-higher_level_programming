@@ -8,9 +8,9 @@ def text_indentation(text):
     text - text to indent and print
     """
     flag = 0
-    textcpy = text.strip(" ")
-    if type(textcpy) is not str:
+    if type(text) is not str:
         raise TypeError("text must be a string")
+    textcpy = text.strip(" ")
     for i in textcpy:
         if i == '.' or i == '?' or i == ':':
             print("{}\n\n".format(i), end="")
