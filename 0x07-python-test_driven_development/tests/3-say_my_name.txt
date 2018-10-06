@@ -29,11 +29,21 @@ SUCCESS
     >>> say_my_name("", "Jills")
     My name is  Jills
 
+    >>> say_my_name("")
+
+    >>> say_my_name("","")
+
+
 """
 ERROR
 """
 
     Incorrect type:
+
+    >>> say_my_name(6, "Flip")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
 
     >>> say_my_name(None, "George")
     Traceback (most recent call last):
@@ -44,3 +54,4 @@ ERROR
     Traceback (most recent call last):
     ...
     TypeError: last_name must be a string
+
