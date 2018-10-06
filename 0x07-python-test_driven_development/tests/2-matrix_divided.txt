@@ -23,6 +23,12 @@ SUCCESS
     >>> matrix_divided([[1]], .5)
     [[2.0]]
 
+    >>> matrix_divided([[2.0000, 8.0000], [16.0000, 6.0000]], 2)
+    [[1.0, 4.0], [8.0, 3.0]]
+
+    >>> matrix_divided([[]], 3)
+    [[]]
+
 """
 ERRORS
 """
@@ -32,8 +38,8 @@ ERRORS
     """
 
     >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 'n')
-    ...
     Traceback (most recent call last):
+    ...
     TypeError: div must be a number
 
     """
@@ -41,16 +47,6 @@ ERRORS
     """
 
     >>> matrix_divided([[1, 'lll', 3], [4, 'ss', 8.6]], 2)
-    Traceback (most recent call last):
-    ...
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
-
-    >>> matrix_divided([[]], 2)
-    Traceback (most recent call last):
-    ...
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
-
-    >>> matrix_divided([], 2)
     Traceback (most recent call last):
     ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
