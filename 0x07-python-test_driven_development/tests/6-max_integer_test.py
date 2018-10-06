@@ -18,6 +18,8 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([44, 52, 13, 79, 12, 1098, 31]), 1098)
         self.assertEqual(max_integer([]), None)
         self.assertEqual(max_integer(["cats", "hi"]), "hi")
+        self.assertEqual(max_integer([5]), 5)
+
         """
         ERROR
         """
