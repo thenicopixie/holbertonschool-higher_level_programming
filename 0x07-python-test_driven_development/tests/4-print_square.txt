@@ -33,7 +33,6 @@ SUCCESS
     ##########
 
     >>> print_square(0)
-    <BLANKLINE>
 
     >>> print_square(1)
     #
@@ -60,6 +59,11 @@ ERRORS
     Traceback (most recent call last):
     ...
     TypeError: size must be an integer
+
+    >>> print_square()
+    Traceback (most recent call last):
+    ...
+    TypeError: print_square() missing 1 required positional argument: 'size'
 
     """
     Value Error
