@@ -15,4 +15,3 @@ def print_square(size):
     row = "#" * size
     for i in range(size):
         print("{}".format(row))
-    print()
