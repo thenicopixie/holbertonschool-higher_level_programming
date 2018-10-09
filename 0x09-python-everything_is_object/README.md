@@ -58,6 +58,7 @@ File | Description
 106-line2.txt | Answer for how many string objects are created by the execution of the second line of the given script
 106-line3.txt | Answer for whether or not a string object deleted
 106-line4.txt | Answer for how many string objects are created by the execution of the last line of the given script
+106-line5.txt | Answer for how many string object are created by the execution of the last line of the given script
 
 #### Author
 Nicole Swanson - [@Nicolette_Swan](https://twitter.com/Nicolette_Swan)
