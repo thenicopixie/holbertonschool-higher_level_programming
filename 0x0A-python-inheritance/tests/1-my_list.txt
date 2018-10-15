@@ -1,0 +1,97 @@
+"""Test module for 1-my_list.txt
+==================================
+
+Using "print_sorted"
+"""
+
+"""
+Import
+"""
+
+>>> MyList = __import__('1-my_list').MyList
+
+>>> my_list1 = MyList()
+>>> my_list1.append(5)
+>>> my_list1.append(4)
+>>> my_list1.append(3)
+>>> my_list1.append(2)
+>>> my_list1.append(1)
+
+>>> my_list1.print_sorted()
+[1, 2, 3, 4, 5]
+
+>>> my_list2 = MyList()
+>>> my_list2.append(-1)
+>>> my_list2.append(-2)
+>>> my_list2.append(-3)
+>>> my_list2.append(-4)
+
+>>> my_list2.print_sorted()
+[-4, -3, -2, -1]
+
+>>> my_list3 = MyList()
+>>> my_list3.append(3)
+>>> my_list3.append(5)
+>>> my_list3.append(-6)
+>>> my_list3.append(7)
+>>> my_list3.append(-2)
+
+>>> my_list3.print_sorted()
+[-6, -2, 3, 5, 7]
+
+>>> my_list4 = MyList()
+>>> my_list4.append(2)
+
+>>> my_list4.print_sorted()
+[2]
+
+>>> my_list5 = MyList()
+
+>>> my_list5.print_sorted()
+[]
+
+>>> my_list6 = MyList()
+>>> my_list6.append('b')
+>>> my_list6.append('c')
+>>> my_list6.append('a')
+
+>>> my_list6.print_sorted()
+['a', 'b', 'c']
+
+>>> my_list7 = MyList()
+>>> my_list7.append(3.58)
+>>> my_list7.append(7.23)
+>>> my_list7.append(5.44)
+>>> my_list7.append(1.25)
+
+>>> my_list7.print_sorted()
+[1.25, 3.58, 5.44, 7.23]
+
+>>> my_list8 = MyList()
+>>> my_list8.append(None)
+>>> my_list8.append(None)
+
+>>> my_list8.print_sorted()
+Traceback (most recent call last):
+...
+TypeError: unorderable types: NoneType() < NoneType()
+
+>>> my_list9 = MyList()
+>>> my_list9.append('hello')
+>>> my_list9.append(5)
+>>> my_list9.append(4)
+
+>>> my_list9.print_sorted()
+Traceback (most recent call last):
+...
+TypeError: unorderable types: int() < str()
+
+>>> type(MyList())
+<class '1-my_list.MyList'>
+
+>>> my_listA = MyList()
+>>> my_listA.append(float('inf'))
+>>> my_listA.append(5)
+
+>>> my_listA.print_sorted()
+[5, inf]
