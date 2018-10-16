@@ -25,6 +25,11 @@ Traceback (most recent call last):
 ...
 TypeError: value must be an integer
 
+>>> bg.integer_validator("value", [1, 2])
+Traceback (most recent call last):
+...
+TypeError: value must be an integer
+
 >>> bg.integer_validator("value", )
 Traceback (most recent call last):
 ...
