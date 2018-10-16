@@ -13,8 +13,6 @@ Import
 
 >>> bg.integer_validator("value", 12)
 
->>> bg.integer_validator(6, 5)
-
 >>> bg.integer_validator("value", "hello")
 Traceback (most recent call last):
 ...
@@ -25,32 +23,7 @@ Traceback (most recent call last):
 ...
 TypeError: value must be an integer
 
->>> bg.integer_validator("value", [1, 2])
-Traceback (most recent call last):
-...
-TypeError: value must be an integer
-
->>> bg.integer_validator("value", )
-Traceback (most recent call last):
-...
-TypeError: integer_validator() missing 1 required positional argument: 'value'
-
 >>> bg.integer_validator("value", -6)
 Traceback (most recent call last):
 ...
 ValueError: value must be greater than 0
-
->>> bg.integer_validator("value", None)
-Traceback (most recent call last):
-...
-TypeError: value must be an integer
-
->>> bg.integer_validator("value", int('NaN'))
-Traceback (most recent call last):
-...
-ValueError: invalid literal for int() with base 10: 'NaN'
-
->>> bg.area()
-Traceback (most recent call last):
-...
-Exception: area() is not implemented
