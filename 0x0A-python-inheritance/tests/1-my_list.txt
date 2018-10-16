@@ -96,3 +96,8 @@ TypeError: unorderable types: int() < str()
 >>> my_listA.print_sorted()
 [5, inf]
 
+>>> my_listB = MyList()
+>>> my_listB.append(None)
+
+>>> my_listB.print_sorted()
+[None]
