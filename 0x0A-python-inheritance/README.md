@@ -23,7 +23,20 @@ Python - Inheritance
 ---
 Files | Description
 ------|-----------
-
+0-lookup.py | A function that returns the list of available attributes and methods of an object.
+1-my\_list.py | A class that inherits from list
+2-is\_same\_class.py | A function that returns `True` if the object is an instance of a specified class; otherwise `False`.
+3-is\_kind\_of\_class.py | Check if an object is an instance of a class or an inherited class; otherwise `False`.
+4-inherits\_from.py | Return `True` if the object is an instance of a class that was inherited from a specified class; otherwise `False`.
+5-base\_geometry.py | An empty class
+6-base\_geometry.py | A Base class with a public instance method for area.
+7-base\_geometry.py | Add a instance method to validate a given value.
+8-rectangle.py | Initialize a width and height.
+9-rectangle.py | Create an area method and str method.
+10-square.py | Implement the area method.
+11-square.py | Print square description.
+100-my\_int.py | Write an inherited class that changes equals to not  equals and vice versa.
+101-add\_attribute.py | A function that adds a new attribute to an object. Check if it's possible first"
 
 #### Author
 Nicole Swanson- [@Nicolette_Swan](https://twitter.com/Nicolette_Swan)
