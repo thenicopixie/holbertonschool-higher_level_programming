@@ -34,4 +34,4 @@ File | Description
 6-square.py | Built off of previous questions. A method that determines the position of the square.
 
 #### Author
-Nicole Swanson - [@Nicolette_Swan]
+Nicole Swanson - [@Nicolette_Swan](https://twitter.com/Nicolette_Swan)
