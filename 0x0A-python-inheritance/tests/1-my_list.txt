@@ -101,3 +101,15 @@ TypeError: unorderable types: int() < str()
 
 >>> my_listB.print_sorted()
 [None]
+
+>>> my_listC = MyList()
+>>> my_listC.append(float('NaN'))
+
+>>> my_listC.print_sorted()
+[nan]
+
+>>> my_listD = MyList()
+>>> my_listD.append(float('inf'))
+
+>>> my_listD.print_sorted()
+[inf]
