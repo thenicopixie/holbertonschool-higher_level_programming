@@ -22,4 +22,4 @@ File | Task
 13-insert\_number.c, lists.h | Function that inserts a number into a sorted singly linked list
 
 #### Author
-**Nicole Swanson**
+Nicole Swanson - [@Nicolette_Swan](https://twitter.com/Nicolette_Swan)
