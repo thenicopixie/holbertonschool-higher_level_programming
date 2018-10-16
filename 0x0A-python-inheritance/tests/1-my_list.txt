@@ -12,9 +12,6 @@ Import
 
 >>> my_list1 = MyList()
 
->>> print(my_list1)
-[]
-
 >>> my_list1.print_sorted()
 []
 
