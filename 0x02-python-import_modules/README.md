@@ -20,5 +20,5 @@ File | Task
 5-variable\_load.py | A program that imports a variable from a file and prints its value
 
 #### Author
-**Nicole Swanson**
+Nicole Swanson - [@Nicolette_Swan](https://twitter.com/Nicolette_Swan)
 
