@@ -22,6 +22,7 @@ Python - Input/Output
 
 ---
 File | Description
+-----|------------
 0-read\_file.py | Function that reads a text file (`UTF8`) and prints it to stdout.
 1-number\_of\_lines.py | A function that returns the number of lines of a test file.
 2-read\_lines.py | Function that reads `n` lines of a test file (`UTF8`) and prints it to stdout.
