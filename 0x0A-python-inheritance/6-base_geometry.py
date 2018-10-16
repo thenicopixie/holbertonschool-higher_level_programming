@@ -7,4 +7,5 @@ class BaseGeometry:
     """Base class to raise an exception"""
 
     def area(self):
+        """Method used to raise an exception"""
         raise Exception("area() is not implenented")
