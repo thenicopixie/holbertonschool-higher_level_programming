@@ -95,3 +95,4 @@ TypeError: unorderable types: int() < str()
 
 >>> my_listA.print_sorted()
 [5, inf]
+
