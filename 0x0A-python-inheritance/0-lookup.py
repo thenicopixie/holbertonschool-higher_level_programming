@@ -7,4 +7,4 @@ def lookup(obj):
     Args:
     obj: object to print
     """
-    print(dir(obj))
+    return dir(obj)
