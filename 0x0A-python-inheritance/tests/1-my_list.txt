@@ -11,6 +11,13 @@ Import
 >>> MyList = __import__('1-my_list').MyList
 
 >>> my_list1 = MyList()
+
+>>> print(my_list1)
+[]
+
+>>> my_list1.print_sorted()
+[]
+
 >>> my_list1.append(5)
 >>> my_list1.append(4)
 >>> my_list1.append(3)
