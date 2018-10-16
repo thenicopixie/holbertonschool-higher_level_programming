@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """Module for base class base geometry and subclass rectangle"""
 
 
