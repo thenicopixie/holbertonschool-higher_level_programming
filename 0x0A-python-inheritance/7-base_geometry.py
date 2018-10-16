@@ -16,6 +16,6 @@ class BaseGeometry:
         value: integer to validate
         """
         if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
+            raise TypeError("{:s} must be an integer".format(name))
         elif value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+            raise ValueError("{:s} must be greater than 0".format(name))
