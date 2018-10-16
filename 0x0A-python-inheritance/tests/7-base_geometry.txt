@@ -50,6 +50,17 @@ Traceback (most recent call last):
 ...
 ValueError: invalid literal for int() with base 10: 'NaN'
 
+>>> bg.integer_validator("value", True)
+Traceback (most recent call last):
+...
+TypeError: value must be an integer
+
+>> bg.integer_validator("value", {3, 4})
+Traceback (most recent call last):
+...
+TypeError: value must be an integer
+
+
 >>> bg.area()
 Traceback (most recent call last):
 ...
