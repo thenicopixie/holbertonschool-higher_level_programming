@@ -16,4 +16,4 @@ File | Task
 10-check\_cycle.c, lists.h | Write a function in C that checks if a singly linked list has a cycle in it.
 
 #### Author
-**Nicole Swanson**
+Nicole Swanson - [@Nicolette_Swan](https://twitter.com/Nicolette_Swan)
