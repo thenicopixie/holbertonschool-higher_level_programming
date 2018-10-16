@@ -45,3 +45,7 @@ Traceback (most recent call last):
 ...
 ValueError: invalid literal for int() with base 10: 'NaN'
 
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
