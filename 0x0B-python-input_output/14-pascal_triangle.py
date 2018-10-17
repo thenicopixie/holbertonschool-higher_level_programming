@@ -17,9 +17,6 @@ def pascal_triangle(n):
     for i in range(2, n):
         b_list = []
         for x in range(i + 1):
-            print(b_list)
-            print(i)
-            print(x)
             if x > 0 and x <= i - 1:
                 b_list.append(a_list[i - 1][x - 1] + a_list[i - 1][x])
             else:
