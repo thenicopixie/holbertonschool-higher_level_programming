@@ -81,3 +81,13 @@ class Rectangle(Base):
         """Print rectangle to stdout"""
         row = "#" * self.width
         print((row + '\n') * self.height, end="")
+
+    def __str__(self):
+        """Method that returns a message"""
+        s_id = self.id
+        s_x = self.x
+        s_y = self.y
+        s_w = self.width
+        s_h = self.height
+        r = "[Rectangle]"
+        return "{} ({}) {}/{} - {}/{}".format(r, s_id, s_x, s_y, s_w, s_h)
