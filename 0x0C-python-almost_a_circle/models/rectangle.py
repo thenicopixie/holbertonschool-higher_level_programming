@@ -91,3 +91,20 @@ class Rectangle(Base):
         s_h = self.height
         r = "[Rectangle]"
         return "{} ({}) {}/{} - {}/{}".format(r, s_id, s_x, s_y, s_w, s_h)
+
+    def update(self, *args):
+        """Update the rectangle based on args"""
+        a_list = [self.id, self.width, self.height, self.x, self.y]
+        count = 0
+        for arg in args:
+            if count == 0:
+                self.id = arg
+            elif count == 1:
+                self.__width = arg
+            elif count == 2:
+                self.__height = arg
+            elif count == 3:
+                self.__x = arg
+            elif count == 4:
+                self.__y = arg
+            count += 1
