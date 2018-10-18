@@ -79,8 +79,8 @@ class Rectangle(Base):
 
     def display(self):
         """Print rectangle to stdout"""
-        row = "#" * self.width
-        print((row + '\n') * self.height, end="")
+        row = " " * self.x + "#" * self.width
+        print(('\n' * self.y) + ((row + '\n') * self.height), end="")
 
     def __str__(self):
         """Method that returns a message"""
