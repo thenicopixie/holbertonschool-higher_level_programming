@@ -28,7 +28,7 @@ class Base:
     def save_to_file(cls, list_objs):
         """Writes the JSON string representation of
         list_objs to a file"""
-        filename = cls.__name__ + ".json"
+        filename = str(cls.__name__) + ".json"
         with open(filename, mode="w", encoding="utf-8") as f:
             if list_objs is None:
                 f.write(cls.to_json_string([]))
@@ -46,3 +46,29 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance with all attributes already set"""
+        #if cls.__name__ == "Rectangle":
+         #   dummy = cls(width=1, height=1)
+        #elif cls.__name__ == "Square":
+         #   dummy = cls(size=1)
+        dummy = cls(1, 1)
+        cls.update(dictionary)
+        return dummy
+
+#    @classmethod
+ #   def load_from_file(cls):
+  #      """Returns a list of instances"""
+   #     filename = str(cls.__name__) + ".json"
+    #    i_list = []
+       # j_list = []
+        #if filename is None:
+      #      return i_list
+     #   else:
+         #   with open(filename, mode="r", encoding="utf-8") as f:
+          #      i_list = cls.from_json_string(f.read())
+           #     for j in i_list:
+            #        j_list.append(cls.create(**j))
+             #   return j_list
