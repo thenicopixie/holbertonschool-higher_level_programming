@@ -92,32 +92,44 @@ class Rectangle(Base):
         r = "[Rectangle]"
         return "{} ({}) {}/{} - {}/{}".format(r, s_id, s_x, s_y, s_w, s_h)
 
+#    def update(self, *args, **kwargs):
+ #       """Update the rectangle based on args"""
+  #      if args != ():
+   #         for i in range(len(args)):
+    #            if i == 0:
+     #               self.id = args[i]
+      #          elif i == 1:
+       #             self.__width = args[i]
+        #        elif i == 2:
+         #           self.__height = args[i]
+          #      elif i == 3:
+           #         self.__x = args[i]
+             #   elif i == 4:
+            #        self.__y = args[i]
+#        elif kwargs != {}:
+ #           for key, value in kwargs.items():
+  #              if key == "id":
+   #                 self.id = value
+    #            elif key == "width":
+     #               self.__width = value
+      #          elif key == "height":
+       #             self.__height = value
+        #        elif key == "x":
+         #           self.__x = value
+          #      elif key == "y":
+           #         self.__y = value
+
     def update(self, *args, **kwargs):
-        """Update the rectangle based on args"""
+        """update and assign attribute"""
+        key_list = ['id', 'width', 'height', 'x', 'y']
         if args != ():
-            for i in range(len(args)):
-                if i == 0:
-                    self.id = args[i]
-                elif i == 1:
-                    self.__width = args[i]
-                elif i == 2:
-                    self.__height = args[i]
-                elif i == 3:
-                    self.__x = args[i]
-                elif i == 4:
-                    self.__y = args[i]
+            i = 0
+            for arg in args:
+                setattr(self, key_list[i], arg)
+                i += 1
         elif kwargs != {}:
-            for key, value in kwargs.items():
-                if key == "id":
-                    self.id = value
-                elif key == "width":
-                    self.__width = value
-                elif key == "height":
-                    self.__height = value
-                elif key == "x":
-                    self.__x = value
-                elif key == "y":
-                    self.__y = value
+            for k, v in kwargs.items():
+                setattr(self, k, v)
 
     def to_dictionary(self):
         """Returns the dictionary representation
