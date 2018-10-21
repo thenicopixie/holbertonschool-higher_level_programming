@@ -6,8 +6,17 @@ import unittest
 from models.base import Base
 
 
-class TestBase(unittest.TestCase):
+class Test_Base(unittest.TestCase):
     """Test for Base class
+    Set up and Teardown
+    """
+    def setUp(self):
+        """Setup environment"""
+        pass
+    def tearDown(self):
+        """Tear down environment"""
+        pass
+    """
     Part 1: Test Base class
     Test 1.0
     """
@@ -20,16 +29,21 @@ class TestBase(unittest.TestCase):
     Test 2.0
     """
     def test_case2_0(self):
-        """Test base id with integer"""
+        """Test base id"""
         b = Base()
         self.assertEqual(b.id, 1)
+        b = Base(None)
+        self.assertEqual(b.id, 2)
+        b = Base()
+        self.assertEqual(b.id, 3)
+        self.assertNotEqual(b.id, 25)
     """
     Test 2.1
     """
     def test_case2_1(self):
         """Test base id with None"""
         b = Base(None)
-        self.assertEqual(b.id, 2)
+        self.assertEqual(b.id, 4)
     """
     Test 2.2
     """
@@ -51,6 +65,8 @@ class TestBase(unittest.TestCase):
         """Test base id with float"""
         b = Base(2.25)
         self.assertEqual(b.id, 2.25)
+        b = Base(-3.35)
+        self.assertEqual(b.id, -3.35)
     """
     Test 2.5
     """
@@ -97,23 +113,36 @@ class TestBase(unittest.TestCase):
     Test 2.11
     """
     def test_case2_11(self):
-        """Test base id with nan"""
-        b = Base(float('nan'))
-        self.assertNotEqual(b.id, b.id)
+        """Test base id with nan and inf"""
+        b = Base(float('inf'))
+        self.assertEqual(float('inf'), b.id)
+        b = Base(float('NaN'))
+        self.assertNotEqual(float('NaN'), b.id)
     """
     Test 2.12
     """
     def test_case2_12(self):
         """Test base id with empty argument"""
         b = Base()
-        self.assertEqual(b.id, 3)
+        self.assertEqual(b.id, 5)
     """
     Test 2.13
     """
     def test_case2_13(self):
         """Test base id with too many arguments"""
         with self.assertRaises(TypeError):
-            Base(1, 2)
+            b = Base(1, 2)
+    """
+    Test 2.14
+    """
+    def test_case2_14(self):
+        """Test for error cases"""
+        with self.assertRaises(ValueError):
+            b = Base(int("hello"))
+        with self.assertRaises(ValueError):
+            b = Base(float("lazers"))
+        #with self.assertRaises():
+         #   self.assert
 #    """
  #   Part 3: test to_json_str
   #  """
