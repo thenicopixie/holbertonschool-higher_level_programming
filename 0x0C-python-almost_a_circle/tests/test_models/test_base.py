@@ -1,10 +1,10 @@
 """Unittest for base.py"""
 """
-Import unittest and Base class
+Import unittest, Base class, and Rectangle class
 """
 import unittest
 from models.base import Base
-
+from models.rectangle import Rectangle
 
 class Test_Base(unittest.TestCase):
     """Test for Base class
@@ -150,6 +150,43 @@ class Test_Base(unittest.TestCase):
     #    """Test base method for None"""
      #   j = Base(1).to_json_str({'x': 2, 'y': 3})
       #  self.assertDictEqual(j, [{"x": 2, "y":3}])
+    """
+    Part 3: JSON
+    Test 3.0
+    """
+    def test_case3_0(self):
+        """Test for to_json_string method in Base class"""
+        r = Rectangle(1, 2, 3, 4)
+        r_dict = r.to_dictionary()
+        j_dict = Base.to_json_string([r_dict])
+        print(r_dict)
+        self.assertEqual(type(r_dict), dict)
+        print(j_dict)
+        self.assertEqual(type(j_dict), str)
+        self.assertEqual(Base.to_json_string([]), '[]')
+        self.assertEqual(Base.to_json_string(None), '[]')
+    """
+    Test 3.1
+    """
+#    def test_case3_1(self):
+#        """Test for save_to_file method in Base class"""
+    """
+    Test 3.2
+    """
+    def test_case3_2(self):
+        """Test for from_json_string method in Base class"""
+        self.assertEqual(Base.from_json_string(None), [])
+        self.assertEqual(Base.from_json_string([]), [])
+    """
+    Test 3.3
+    """
+#    def test_case3_3(self):
+ #       """Test for create method in Base class"""
+    """
+    Test 3.4
+    """
+#    def test_case3_4(self):
+ #       """Test for load_from_file method in Base class"""
 
 if __name__ == "__main__":
     unittest.main()
