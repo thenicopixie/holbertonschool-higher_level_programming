@@ -168,8 +168,27 @@ class Test_Base(unittest.TestCase):
     """
     Test 3.1
     """
-#    def test_case3_1(self):
-#        """Test for save_to_file method in Base class"""
+    def test_case3_1(self):
+        """Test for save_to_file method in Base class"""
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        Rectangle.save_to_file([r1, r2])
+        self.assertIsInstance(r1, Base)
+        try:
+            with open("Rectangle.json", "r") as file:
+                print(file.read())
+        except Exception as e:
+            print("{}".format(e))
+        Rectangle.save_to_file(None)
+        try:
+            with open("rectangle.json", "r") as file:
+                print(file.read())
+        except Exception as e:
+            print("{}".format(e))
+        try:
+            Rectangle.save_to_file()
+        except Exception as e:
+            print("{}".format(e))
     """
     Test 3.2
     """
@@ -177,11 +196,39 @@ class Test_Base(unittest.TestCase):
         """Test for from_json_string method in Base class"""
         self.assertEqual(Base.from_json_string(None), [])
         self.assertEqual(Base.from_json_string([]), [])
+        l_in = [
+            {'id': 89, 'width': 10, 'height': 4}, 
+            {'id': 7, 'width': 1, 'height': 7}
+        ]
+        j_in = Rectangle.to_json_string(l_in)
+        l_out = Rectangle.from_json_string(j_in)
+        self.assertEqual(type(l_in), list)
+        self.assertEqual(type(j_in), str)
+        self.assertEqual(type(l_out), list)
     """
     Test 3.3
     """
-#    def test_case3_3(self):
- #       """Test for create method in Base class"""
+    def test_case3_3(self):
+        """Test case for create method in Base class"""
+        r1 = Rectangle(3, 5, 1, 1, 1)
+        r1_d = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_d)
+        self.assertEqual(r1.__str__(), "[Rectangle] (1) 1/1 - 3/5")
+        self.assertEqual(r2.__str__(), "[Rectangle] (1) 1/1 - 3/5")
+        self.assertFalse(r1 is r2)
+        self.assertFalse(r1 == r2)
+        try:
+            Rectangle.create("hello")
+        except Exception as e:
+            print("{}".format(e))
+        try:
+            Rectanlge.create()
+        except Exception as e:
+            print("{}".format(e))
+        try:
+            Rectangle.create("hi")
+        except Exception as e:
+            print("{}".format(e))
     """
     Test 3.4
     """
