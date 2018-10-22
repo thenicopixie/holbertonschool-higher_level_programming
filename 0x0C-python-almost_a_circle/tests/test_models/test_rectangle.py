@@ -28,11 +28,11 @@ class TestRectangle(unittest.TestCase):
     def test_case2_0(self):
         """Test positive attributes"""
         r = Rectangle(1, 2, 3, 4, 5)
-        self.assertEquals(r.width, 1)
-        self.assertEquals(r.height, 2)
-        self.assertEquals(r.x, 3)
-        self.assertEquals(r.y, 4)
-        self.assertEquals(r.id, 5)
+        self.assertEqual(r.width, 1)
+        self.assertEqual(r.height, 2)
+        self.assertEqual(r.x, 3)
+        self.assertEqual(r.y, 4)
+        self.assertEqual(r.id, 5)
     """
     Test 2.1
     """
@@ -79,6 +79,28 @@ class TestRectangle(unittest.TestCase):
             r = Rectangle(1, 2, float("inf"), 4, 5)
         with self.assertRaises(TypeError):
             r = Rectangle(1, 2, 3, {}, 5)
+        a = "[TypeError] height must be an integer"
+        b = "[ValueError] width must be > 0"
+        c = "[TypeError] x must be an integer"
+        d = "[ValueError] y must be >= 0"
+        try:
+            Rectangle(10, "2")
+        except Exception as e:
+            self.assertEqual("[{}] {}".format(e.__class__.__name__, e), a)
+        try:
+            r = Rectangle(10, 2)
+            r.width = -10
+        except Exception as e:
+            self.assertEqual("[{}] {}".format(e.__class__.__name__, e), b)
+        try:
+            r = Rectangle(10, 2)
+            r.x = {}
+        except Exception as e:
+            self.assertEqual("[{}] {}".format(e.__class__.__name__, e), c)
+        try:
+            Rectangle(10, 2, 3, -1)
+        except Exception as e:
+            self.assertEqual("[{}] {}".format(e.__class__.__name__, e), d)
     """
     Test 2.3
     """
