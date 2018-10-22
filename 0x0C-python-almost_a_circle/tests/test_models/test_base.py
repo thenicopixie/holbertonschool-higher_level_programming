@@ -10,10 +10,28 @@ class Test_Base(unittest.TestCase):
     """Test for Base class
     Set up and Teardown
     """
-    def setUp(self):
+    @classmethod
+    def setUpClass(cls):
         """Setup environment"""
-        pass
-    def tearDown(self):
+        cls.b1 = Base(1)
+        cls.b2 = Base()
+        cls.b3 = Base(None)
+        cls.b4 = Base(35)
+        cls.b5 = Base(5)
+        cls.b6 = Base("name")
+        cls.b7 = Base(2.25)
+        cls.b8 = Base(-3.35)
+        cls.b9 = Base(True)
+        cls.b10 = Base(False)
+        cls.b11 = Base([1, 2])
+        cls.b12 = Base((1, 2))
+        cls.b13 = Base({"name": "Carl"})
+        cls.b14 = Base([])
+        cls.b15 = Base(float('inf'))
+        cls.b16 = Base(float('NaN'))
+
+    @classmethod
+    def tearDown(cls):
         """Tear down environment"""
         pass
     """
@@ -22,109 +40,90 @@ class Test_Base(unittest.TestCase):
     """
     def test_case1_0(self):
         """Test for base type"""
-        b = Base(1)
-        self.assertIsInstance(b, Base)
+        self.assertIsInstance(self.b1, Base)
     """
     Part 2: Test for id
     Test 2.0
     """
     def test_case2_0(self):
         """Test base id"""
-        b = Base()
-        self.assertEqual(b.id, 1)
-        b = Base(None)
-        self.assertEqual(b.id, 2)
-        b = Base()
-        self.assertEqual(b.id, 3)
-        self.assertNotEqual(b.id, 25)
+        self.assertEqual(self.b2.id, 1)
+        self.assertEqual(self.b3.id, 2)
+        self.assertNotEqual(self.b4.id, 25)
     """
     Test 2.1
     """
     def test_case2_1(self):
         """Test base id with None"""
-        b = Base(None)
-        self.assertEqual(b.id, 4)
+        self.assertEqual(self.b3.id, 2)
     """
     Test 2.2
     """
     def test_case2_2(self):
         """Test base id with integer"""
-        b = Base(5)
-        self.assertEqual(b.id, 5)
+        self.assertEqual(self.b5.id, 5)
     """
     Test 2.3
     """
     def test_case2_3(self):
         """Test base id with string"""
-        b = Base("name")
-        self.assertEqual(b.id, "name")
+        self.assertEqual(self.b6.id, "name")
     """
     Test 2.4
     """
     def test_case2_4(self):
         """Test base id with float"""
-        b = Base(2.25)
-        self.assertEqual(b.id, 2.25)
-        b = Base(-3.35)
-        self.assertEqual(b.id, -3.35)
+        self.assertEqual(self.b7.id, 2.25)
+        self.assertEqual(self.b8.id, -3.35)
     """
     Test 2.5
     """
     def test_case2_5(self):
         """Test base id with True"""
-        b = Base(True)
-        self.assertEqual(b.id, True)
+        self.assertEqual(self.b9.id, True)
     """
     Test 2.6
     """
     def test_case2_6(self):
         """Test base id with False"""
-        b = Base(False)
-        self.assertEqual(b.id, False)
+        self.assertEqual(self.b10.id, False)
     """
     Test 2.7
     """
     def test_case2_7(self):
         """Test base id with list"""
-        b = Base([1, 2])
-        self.assertEqual(b.id, [1, 2])
+        self.assertEqual(self.b11.id, [1, 2])
     """
     Test 2.8
     """
     def test_case2_8(self):
         """Test base id with tuple"""
-        b = Base((1, 2))
-        self.assertEqual(b.id, (1, 2))
+        self.assertEqual(self.b12.id, (1, 2))
     """
     Test 2.9
     """
     def test_case2_9(self):
         """Test base id with dictionary"""
-        b = Base({"name": "Carl"})
-        self.assertEqual(b.id, {"name": "Carl"})
+        self.assertEqual(self.b13.id, {"name": "Carl"})
     """
     Test 2.10
     """
     def test_case2_10(self):
         """Test Base id with empty list"""
-        b = Base([])
-        self.assertEqual(b.id, [])
+        self.assertEqual(self.b14.id, [])
     """
     Test 2.11
     """
     def test_case2_11(self):
         """Test base id with nan and inf"""
-        b = Base(float('inf'))
-        self.assertEqual(float('inf'), b.id)
-        b = Base(float('NaN'))
-        self.assertNotEqual(float('NaN'), b.id)
+        self.assertEqual(float('inf'), self.b15.id)
+        self.assertNotEqual(float('NaN'), self.b16.id)
     """
     Test 2.12
     """
     def test_case2_12(self):
         """Test base id with empty argument"""
-        b = Base()
-        self.assertEqual(b.id, 5)
+        self.assertEqual(self.b2.id, 1)
     """
     Test 2.13
     """
@@ -141,23 +140,14 @@ class Test_Base(unittest.TestCase):
             b = Base(int("hello"))
         with self.assertRaises(ValueError):
             b = Base(float("lazers"))
-        #with self.assertRaises():
-         #   self.assert
-#    """
- #   Part 3: test to_json_str
-  #  """
-   # def test_case3_0(self):
-    #    """Test base method for None"""
-     #   j = Base(1).to_json_str({'x': 2, 'y': 3})
-      #  self.assertDictEqual(j, [{"x": 2, "y":3}])
     """
     Part 3: JSON
     Test 3.0
     """
     def test_case3_0(self):
         """Test for to_json_string method in Base class"""
-        r = Rectangle(1, 2, 3, 4)
-        r_dict = r.to_dictionary()
+        r1 = Rectangle(1, 2, 3, 4)
+        r_dict = r1.to_dictionary()
         j_dict = Base.to_json_string([r_dict])
         print(r_dict)
         self.assertEqual(type(r_dict), dict)
@@ -210,13 +200,13 @@ class Test_Base(unittest.TestCase):
     """
     def test_case3_3(self):
         """Test case for create method in Base class"""
-        r1 = Rectangle(3, 5, 1, 1, 1)
-        r1_d = r1.to_dictionary()
-        r2 = Rectangle.create(**r1_d)
-        self.assertEqual(r1.__str__(), "[Rectangle] (1) 1/1 - 3/5")
-        self.assertEqual(r2.__str__(), "[Rectangle] (1) 1/1 - 3/5")
-        self.assertFalse(r1 is r2)
-        self.assertFalse(r1 == r2)
+        r3 = Rectangle(3, 5, 1, 1, 1)
+        r1_d = r3.to_dictionary()
+        rr = Rectangle.create(**r1_d)
+        self.assertEqual(r3.__str__(), "[Rectangle] (1) 1/1 - 3/5")
+        self.assertEqual(rr.__str__(), "[Rectangle] (1) 1/1 - 3/5")
+        self.assertFalse(r3 is rr)
+        self.assertFalse(r3 == rr)
         try:
             Rectangle.create("hello")
         except Exception as e:
