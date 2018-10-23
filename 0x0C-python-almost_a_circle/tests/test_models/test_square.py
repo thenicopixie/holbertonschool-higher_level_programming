@@ -3,9 +3,13 @@
 """
 Import unittest
 Import Square class
+Import io
+Import sys
 """
 import unittest
 from models.square import Square
+import io
+import sys
 
 class Test_Square(unittest.TestCase):
     """Class to test class Square"""
@@ -57,6 +61,11 @@ class Test_Square(unittest.TestCase):
     def test_case1_2(self):
         """Test case for print square in Square class"""
         self.assertEqual(self.s3.__str__(), "[Square] (1) 0/0 - 5")
+        output = io.StringIO()
+        sys.stdout = output
+        self.s3.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), "#####\n" * 5)
 
 if __name__ == "__main__":
     unittest.main()
