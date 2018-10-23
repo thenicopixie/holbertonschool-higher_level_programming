@@ -13,13 +13,35 @@ import sys
 
 class TestRectangle(unittest.TestCase):
     """Test for rectangle class"""
+
+    @classmethod
+    def setUpClass(cls):
+        """Set up environment"""
+        cls.r1 = Rectangle(1, 2)
+        cls.r2 = Rectangle(1, 2, 3, 4, 5)
+        cls.r3 = Rectangle(2, 10)
+        cls.r4 = Rectangle(8, 7, 0, 0, 12)
+        cls.r5 = Rectangle(5, 3)
+        cls.r6 = Rectangle(2, 3, 2, 2)
+        cls.r7 = Rectangle(10, 10, 10, 10, 1)
+        cls.r8 = Rectangle(10, 10, 10, 10, 1)
+        cls.r9 = Rectangle (10, 2, 3, 9)
+        cls.r10 = Rectangle(1, 1)
+
+    @classmethod
+    def tearDownClass(cls):
+        """Tear down environment"""
+        pass
+
     """Part 1: test class instance
     Test 1.0
     """
     def test_case1_0(self):
         """Test class instance"""
-        r = Rectangle(1, 2)
-        self.assertIsInstance(r, Rectangle)
+        self.assertIsInstance(self.r1, Rectangle)
+        self.assertEqual(self.r1.id, 1)
+        self.assertEqual(self.r1.width, 1)
+        self.assertEqual(self.r1.height, 2)
 
     """
     Part 2: test instance attrubte values
@@ -27,12 +49,11 @@ class TestRectangle(unittest.TestCase):
     """
     def test_case2_0(self):
         """Test positive attributes"""
-        r = Rectangle(1, 2, 3, 4, 5)
-        self.assertEqual(r.width, 1)
-        self.assertEqual(r.height, 2)
-        self.assertEqual(r.x, 3)
-        self.assertEqual(r.y, 4)
-        self.assertEqual(r.id, 5)
+        self.assertEqual(self.r2.width, 1)
+        self.assertEqual(self.r2.height, 2)
+        self.assertEqual(self.r2.x, 3)
+        self.assertEqual(self.r2.y, 4)
+        self.assertEqual(self.r2.id, 5)
     """
     Test 2.1
     """
@@ -106,32 +127,26 @@ class TestRectangle(unittest.TestCase):
     """
     def test_case2_3(self):
         """Test for area method in Rectangle class"""
-        r = Rectangle(1, 2, 3, 4, 5)
-        print(r.area())
-        self.assertEqual(r.area(), 2)
-        r = Rectangle(3, 2)
-        self.assertEqual(r.area(), 6)
-        r = Rectangle(2, 10)
-        self.assertEqual(r.area(), 20)
-        r = Rectangle(8, 7, 0, 0, 12)
-        self.assertEqual(r.area(), 56)
+        print(self.r2.area())
+        self.assertEqual(self.r2.area(), 2)
+        self.assertEqual(self.r1.area(), 2)
+        self.assertEqual(self.r3.area(), 20)
+        self.assertEqual(self.r4.area(), 56)
     """
     Test 2.4
     """
     def test_case2_4(self):
         """Test for display method in Rectangle class"""
-        r = Rectangle(5, 3)
         output = io.StringIO()
         sys.stdout = output
-        r.display()
+        self.r5.display()
         sys.stdout = sys.__stdout__
         self.assertEqual(output.getvalue(), "#####\n" * 3)
-        r.display()
+        self.r5.display()
         self.assertEqual(output.getvalue(), "#####\n" * 3)
-        r = Rectangle(2, 3, 2, 2)
         output = io.StringIO()
         sys.stdout = output
-        r.display()
+        self.r6.display()
         sys.stdout = sys.__stdout__
         string = "\n\n  ##\n  ##\n  ##\n"
         self.assertEqual(output.getvalue(), string)
@@ -140,11 +155,10 @@ class TestRectangle(unittest.TestCase):
     """
     def test_case2_5(self):
         """Test for string method in Rectangle class"""
-        r = Rectangle(1, 2, 3, 4, 5)
-        self.assertEqual(r.__str__(), "[Rectangle] (5) 3/4 - 1/2")
+        self.assertEqual(self.r2.__str__(), "[Rectangle] (5) 3/4 - 1/2")
         output = io.StringIO()
         sys.stdout = output
-        print(r.__str__())
+        print(self.r2.__str__())
         sys.stdout = sys.__stdout__
         self.assertEqual(output.getvalue(), "[Rectangle] (5) 3/4 - 1/2\n")
     """
@@ -152,61 +166,55 @@ class TestRectangle(unittest.TestCase):
     """
     def test_case2_6(self):
         """Test for update method in Rectangle class"""
-        Base._Base__nb_objects = 0
-        r = Rectangle(10, 10, 10, 10, 1)
-        self.assertEqual(r.__str__(), "[Rectangle] (1) 10/10 - 10/10")
+        self.assertEqual(self.r7.__str__(), "[Rectangle] (1) 10/10 - 10/10")
 
         output = io.StringIO()
         sys.stdout = output
-        print(r.__str__())
+        print(self.r7.__str__())
         sys.stdout = sys.__stdout__
         self.assertEqual(output.getvalue(), "[Rectangle] (1) 10/10 - 10/10\n")
 
-        r.update(89)
-        self.assertEqual(r.__str__(), "[Rectangle] (89) 10/10 - 10/10")
+        self.r7.update(89)
+        self.assertEqual(self.r7.__str__(), "[Rectangle] (89) 10/10 - 10/10")
 
-        r.update(89, 2)
-        self.assertEqual(r.__str__(), "[Rectangle] (89) 10/10 - 2/10")
+        self.r7.update(89, 2)
+        self.assertEqual(self.r7.__str__(), "[Rectangle] (89) 10/10 - 2/10")
 
-        r.update(89, 2, 3)
-        self.assertEqual(r.__str__(), "[Rectangle] (89) 10/10 - 2/3")
+        self.r7.update(89, 2, 3)
+        self.assertEqual(self.r7.__str__(), "[Rectangle] (89) 10/10 - 2/3")
 
-        r.update(89, 2, 3, 4)
-        self.assertEqual(r.__str__(), "[Rectangle] (89) 4/10 - 2/3")
+        self.r7.update(89, 2, 3, 4)
+        self.assertEqual(self.r7.__str__(), "[Rectangle] (89) 4/10 - 2/3")
 
-        r.update(89, 2, 3, 4, 5)
-        self.assertEqual(r.__str__(), "[Rectangle] (89) 4/5 - 2/3")
+        self.r7.update(89, 2, 3, 4, 5)
+        self.assertEqual(self.r7.__str__(), "[Rectangle] (89) 4/5 - 2/3")
 
-        r.update(89, 2, 3, 4, 5)
+        self.r7.update(89, 2, 3, 4, 5)
         output = io.StringIO()
         sys.stdout = output
-        print(r.__str__())
+        print(self.r7.__str__())
         sys.stdout = sys.__stdout__
         self.assertEqual(output.getvalue(), "[Rectangle] (89) 4/5 - 2/3\n")
 
-        r = Rectangle(10, 10, 10, 10, 1)
-        self.assertEqual(r.__str__(), "[Rectangle] (1) 10/10 - 10/10")
-        r.update(height=1)
-        self.assertEqual(r.__str__(), "[Rectangle] (1) 10/10 - 10/1")
-        r.update(width=1, x=2)
-        self.assertEqual(r.__str__(), "[Rectangle] (1) 2/10 - 1/1")
-        r.update(y=1, width=2, x=3, id=89)
-        self.assertEqual(r.__str__(), "[Rectangle] (89) 3/1 - 2/1")
-        r.update(x=1, height=2, y=3, width=4)
-        self.assertEqual(r.__str__(), "[Rectangle] (89) 1/3 - 4/2")
+        self.assertEqual(self.r8.__str__(), "[Rectangle] (1) 10/10 - 10/10")
+        self.r8.update(height=1)
+        self.assertEqual(self.r8.__str__(), "[Rectangle] (1) 10/10 - 10/1")
+        self.r8.update(width=1, x=2)
+        self.assertEqual(self.r8.__str__(), "[Rectangle] (1) 2/10 - 1/1")
+        self.r8.update(y=1, width=2, x=3, id=89)
+        self.assertEqual(self.r8.__str__(), "[Rectangle] (89) 3/1 - 2/1")
+        self.r8.update(x=1, height=2, y=3, width=4)
+        self.assertEqual(self.r8.__str__(), "[Rectangle] (89) 1/3 - 4/2")
 
     """
     Test 2.7
     """
     def test_case2_7(self):
         """Test for to_dictionary method in Rectangle class"""
-        Base._Base__nb_objects = 0
-        r = Rectangle (10, 2, 3, 9)
-        d = r.to_dictionary()
+        d = self.r9.to_dictionary()
         self.assertEqual(type(d), dict)
-        r2 = Rectangle(1, 1)
-        r2.update(**d)
-        self.assertEqual(r2.__str__(), "[Rectangle] (1) 3/9 - 10/2")
+        self.r10.update(**d)
+        self.assertEqual(self.r10.__str__(), "[Rectangle] (5) 3/9 - 10/2")
         r = Rectangle(3, 2, 1, 5)
         with self.assertRaises(TypeError):
             r.to_dictionary(1)
