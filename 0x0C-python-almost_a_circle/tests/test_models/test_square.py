@@ -98,6 +98,11 @@ class Test_Square(unittest.TestCase):
         self.s3.display()
         sys.stdout = sys.__stdout__
         self.assertEqual(output.getvalue(), "#####\n" * 5)
+        output = io.StringIO()
+        sys.stdout = output
+        print(self.s3)
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), "[Square] (1) 0/0 - 5\n")
 
 if __name__ == "__main__":
     unittest.main()
