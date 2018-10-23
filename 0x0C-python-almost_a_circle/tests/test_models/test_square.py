@@ -29,6 +29,10 @@ class Test_Square(unittest.TestCase):
     """
     Part 1: Square
     """
+    def test_case_0(self):
+        """Test Square class"""
+        self.assertTrue(type(self.s1), Square)
+        self.assertIsInstance(self.s1, Square)
 
     """
     Test 1.0
