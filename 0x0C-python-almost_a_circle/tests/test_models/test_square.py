@@ -10,6 +10,18 @@ from models.square import Square
 class Test_Square(unittest.TestCase):
     """Class to test class Square"""
 
+    @classmethod
+    def setUpClass(cls):
+        """"""
+        cls.s1 = Square(5, 6, 7, 8)
+        cls.s2 = Square(1, 2, 3, 4)
+        cls.s3 = Square(5)
+
+    @classmethod
+    def tearDownClass(cls):
+        """Tear down"""
+        pass
+
     """
     Part 1: Square
     """
@@ -19,24 +31,32 @@ class Test_Square(unittest.TestCase):
     """
     def test_case1_0(self):
         """Test for attributes in Square class"""
-        s = Square(5, 6, 7, 8)
-        self.assertEqual(s.size, 5)
-        self.assertEqual(s.x, 6)
-        self.assertEqual(s.y, 7)
-        self.assertEqual(s.id, 8)
+        self.assertEqual(self.s1.size, 5)
+        self.assertEqual(self.s1.x, 6)
+        self.assertEqual(self.s1.y, 7)
+        self.assertEqual(self.s1.id, 8)
     """
     Test 1.1
     """
     def test_case1_1(self):
         """Test case for update method in Square class"""
-        s = Square(1, 2, 3, 4)
-        s.size = 25
-        self.assertEqual(s.size, 25)
-        self.assertEqual(s._Rectangle__width, 25)
-        self.assertEqual(s._Rectangle__height, 25)
-        self.assertEqual(s.x, 2)
-        s.update(x=12)
-        self.assertEqual(s.x, 12)
-        s.update(size=33)
-        self.assertEqual(s._Rectangle__width, 33)
-        self.assertEqual(s._Rectangle__height, 33)
+        self.s2.size = 25
+        self.assertEqual(self.s2.size, 25)
+        self.assertEqual(self.s2._Rectangle__width, 25)
+        self.assertEqual(self.s2._Rectangle__height, 25)
+        self.assertEqual(self.s2.x, 2)
+        self.s2.update(x=12)
+        self.assertEqual(self.s2.x, 12)
+        self.s2.update(size=33)
+        self.assertEqual(self.s2._Rectangle__width, 33)
+        self.assertEqual(self.s2._Rectangle__height, 33)
+
+    """
+    Test 1.2
+    """
+    def test_case1_2(self):
+        """Test case for print square in Square class"""
+        self.assertEqual(self.s3.__str__(), "[Square] (1) 0/0 - 5")
+
+if __name__ == "__main__":
+    unittest.main()
