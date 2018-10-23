@@ -39,7 +39,7 @@ class TestRectangle(unittest.TestCase):
     def test_case1_0(self):
         """Test class instance"""
         self.assertIsInstance(self.r1, Rectangle)
-        self.assertEqual(self.r1.id, 1)
+        self.assertEqual(self.r1.id, 7)
         self.assertEqual(self.r1.width, 1)
         self.assertEqual(self.r1.height, 2)
 
@@ -214,7 +214,7 @@ class TestRectangle(unittest.TestCase):
         d = self.r9.to_dictionary()
         self.assertEqual(type(d), dict)
         self.r10.update(**d)
-        self.assertEqual(self.r10.__str__(), "[Rectangle] (5) 3/9 - 10/2")
+        self.assertEqual(self.r10.__str__(), "[Rectangle] (11) 3/9 - 10/2")
         r = Rectangle(3, 2, 1, 5)
         with self.assertRaises(TypeError):
             r.to_dictionary(1)
