@@ -39,6 +39,34 @@ class Test_Square(unittest.TestCase):
         self.assertEqual(self.s1.x, 6)
         self.assertEqual(self.s1.y, 7)
         self.assertEqual(self.s1.id, 8)
+        with self.assertRaises(ValueError):
+            s = Square(-1)
+        with self.assertRaises(ValueError):
+            s = Square(0)
+        with self.assertRaises(TypeError):
+            s = Square("string")
+        with self.assertRaises(TypeError):
+            s = Square((1, 2))
+        with self.assertRaises(TypeError):
+            s = Square([])
+        with self.assertRaises(TypeError):
+            s = Square({'a': 5})
+        with self.assertRaises(TypeError):
+            s = Square(None)
+        with self.assertRaises(TypeError):
+            s = Square(True)
+        with self.assertRaises(TypeError):
+            s = Square(False)
+        with self.assertRaises(TypeError):
+            s = Square()
+        with self.assertRaises(TypeError):
+            s = Square(4.45)
+        with self.assertRaises(TypeError):
+            s = Square(-4.45)
+        with self.assertRaises(TypeError):
+            s = Square(float('inf'))
+        with self.assertRaises(TypeError):
+            s = Square(float('NaN'))
     """
     Test 1.1
     """
