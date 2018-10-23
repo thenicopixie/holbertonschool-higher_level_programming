@@ -103,6 +103,25 @@ class Test_Square(unittest.TestCase):
         print(self.s3)
         sys.stdout = sys.__stdout__
         self.assertEqual(output.getvalue(), "[Square] (1) 0/0 - 5\n")
+    """
+    Test 1.3
+    """
+    def test_case1_3(self):
+        """Test update method in Square class"""
+        self.s3.update(10)
+        self.assertEqual(self.s3.__str__(), "[Square] (10) 0/0 - 5")
+        self.s3.update(1, 2)
+        self.assertEqual(self.s3.__str__(), "[Square] (1) 0/0 - 2")
+        self.s3.update(1, 2, 3)
+        self.assertEqual(self.s3.__str__(), "[Square] (1) 3/0 - 2")
+        self.s3.update(1, 2, 3, 4)
+        self.assertEqual(self.s3.__str__(), "[Square] (1) 3/4 - 2")
+        self.s3.update(x=12)
+        self.assertEqual(self.s3.__str__(), "[Square] (1) 12/4 - 2")
+        self.s3.update(size=7, y=1)
+        self.assertEqual(self.s3.__str__(), "[Square] (1) 12/1 - 7")
+        self.s3.update(size=7, id=89, y=1)
+        self.assertEqual(self.s3.__str__(), "[Square] (89) 12/1 - 7")
 
 if __name__ == "__main__":
     unittest.main()
