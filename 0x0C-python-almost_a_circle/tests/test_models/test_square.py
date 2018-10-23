@@ -101,7 +101,7 @@ class Test_Square(unittest.TestCase):
         sys.stdout = output
         print(self.s3)
         sys.stdout = sys.__stdout__
-        self.assertEqual(output.getvalue(), "[Square] (15) 0/0 - 5\n")
+        self.assertEqual(output.getvalue(), "[Square] (16) 0/0 - 5\n")
     """
     Test 1.3
     """
