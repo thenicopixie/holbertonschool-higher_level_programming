@@ -17,23 +17,23 @@
 ---
 File | Description
 -----|------------
-0-list\_databases.sql |
-1-create\_database\_if\_missing.sql |
-2-remove\_database.sql |
-3-list\_tables.sql |
-4-first\_table.sql |
-5-full\_table.sql |
-6-list\_values.sql |
-7-insert\_value.sql |
-8-count\_89.sql |
-9-full\_creation.sql |
-10-top\_score.sql |
-11-best\_score.sql |
-12-no\_cheating.sql |
-13-change\_class.sql |
-14-average.sql |
-15-groups.sql |
-16-no\_link.sql |
+0-list\_databases.sql | Script that lists all databases of the MySQL server
+1-create\_database\_if\_missing.sql | Create a database with given name if it does not exist. Not allowed to use `SELECT` or `SHOW`.
+2-remove\_database.sql | Script that deletes the given database from the MySQL if it exists. Now allowed to use the SELECT of SHOW statements.
+3-list\_tables.sql | Script that lists all the tables of a database from the MySQL server.
+4-first\_table.sql | Script that creates a table in the current database of the MySQL server.
+5-full\_table.sql | Script that prints the full description of a given table from a given database in the MySQL server
+6-list\_values.sql | Script that lists all rows of a given table from a given database in the MySQL server.
+7-insert\_value.sql | Script that inserts a new row in the given table from a given database in the MySQL server.
+8-count\_89.sql | Script that displays the number of records with given vales in the given table of the given database of the MySQL server.
+9-full\_creation.sql | Script that creates a table in a database in the MySQL server and adds multiple rows.
+10-top\_score.sql | Script that lists all records of a table of a database in the MySQL server
+11-best\_score.sql | Script that lists all records with a score >= 10
+12-no\_cheating.sql | Script that changed the score to 10 if the name is Bob
+13-change\_class.sql | Script that removes all records with a score <= 5
+14-average.sql | Script that computes the score average of all records in the table of the database
+15-groups.sql | Script that lists the number of records with the same score in the table of the database
+16-no\_link.sql | Script that lists all records of the talbe of the database
 
 #### Author
 Nicole Swanson - [@Nicolette_Swan](https://twitter.com/Nicolette_Swan)
