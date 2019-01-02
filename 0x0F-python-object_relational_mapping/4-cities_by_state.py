@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Script that lists all states with a name starting with N
-safe from injections"""
+"""Script that lists all cities from a database"""
 import MySQLdb
 import sys
 conn = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
