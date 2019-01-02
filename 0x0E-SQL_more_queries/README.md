@@ -37,6 +37,7 @@ $
 
 ---
 File | Description
+-----|-------------
 0-privileges.sql | Script that lists all privileges of the MySQL users `user_0d_1` and `user_0d_2` on the server.
 1-create\_user.sql | Script that create the MySQL server user `user_0d_1`.
 2-create\_read\_user.sql | Script that creates the database `hbtn_0d_2` and the user `user_0d_2`.
