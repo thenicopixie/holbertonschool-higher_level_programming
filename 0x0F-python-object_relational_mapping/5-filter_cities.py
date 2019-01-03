@@ -7,7 +7,7 @@ if __name__ == "__main__":
                            passwd=sys.argv[2], db=sys.argv[3],
                            charset="utf8")
     cur = conn.cursor()
-    cmd = """SELECT cities.name FROM cities INNER JOIN states ON
+    cmd = """SELECT cities.name FROM cities JOIN states ON
           cities.state_id = states.id WHERE states.name = %s"""
     cur.execute(cmd, (sys.argv[4], ))
     query_rows = cur.fetchall()
