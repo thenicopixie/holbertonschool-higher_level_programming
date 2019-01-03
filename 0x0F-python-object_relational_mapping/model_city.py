@@ -3,7 +3,7 @@
 """
 if __name__ == "__main__":
     from sqlalchemy import Column, Integer, String
-    from model_state import Base
+    from model_state import Base, State
 
     class City(Base):
         """A state class inheriting from base
