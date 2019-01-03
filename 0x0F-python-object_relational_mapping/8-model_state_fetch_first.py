@@ -18,5 +18,5 @@ if __name__ == "__main__":
         result = session.query(State).first()
         print("{}: {}".format(result.id, result.name))
     except:
-        print("States is empty or does not exist")
+        print("Nothing")
     session.close()
