@@ -11,13 +11,9 @@ if __name__ == "__main__":
           cities.state_id = states.id WHERE states.name = %s"""
     cur.execute(cmd, (sys.argv[4], ))
     query_rows = cur.fetchall()
-    count = 0
+    city = []
     for row in query_rows:
-        for col in row:
-            if count != len(query_rows) - 1:
-                print("{}, ".format(col), end="")
-            else:
-                print("{}".format(col))
-            count += 1
+        city.append(row[0])
+    print(", ".join(i for i in city))
     cur.close()
     conn.close()
