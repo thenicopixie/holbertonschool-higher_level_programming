@@ -16,10 +16,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for row in session.query(State).all():
-        print("{}: {}".format(row.id, row.name))
-        for col in session.query(City).filter(
-                                  row.id == City.state_id).all():
-            print("\t{}: {}".format(col.id, col.name))
+    for state in session.query(State).all():
+        print("{}: {}".format(state.id, state.name))
+        for city in state.cities:
+            print("\t{}: {}".format(city.id, city.name))
     session.commit()
     session.close()
