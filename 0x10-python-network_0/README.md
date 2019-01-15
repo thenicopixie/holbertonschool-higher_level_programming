@@ -20,6 +20,8 @@
 
 ---
 File | Description
+-----|-----------
+
 0-body\_size.sh | Bash script that takes a URL and sends a request to that URL. Displays the size of the body of the response.
 1-body.sh | Bash script that takes a URL and sends a `GET` request to the URL. Displays the body of the response.
 2-delete.sh | Bash script that sends a `DELETE` request to the URL passed and displays the body of the response.
