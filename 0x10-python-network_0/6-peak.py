@@ -5,29 +5,28 @@
 def find_peak(list_of_integers):
     """go through list to find a peak"""
     nums = list_of_integers
-    if nums is None:
+    if nums is None or nums == []:
         return None
     if len(nums) == 1:
         return nums[0]
-    ln = len(nums) - 1
+    if len(set(nums)) == 1:
+        return nums[0]
+    ln = len(nums)
     if ln % 2 != 0:
-        ln + 1
-    point = int(ln/2)
+        ln - 1
+    point = ln//2
     l = point - 1
     r = point + 1
-    if l >= 0 and r <= ln:
-        if nums[point] >= nums[l] and nums[point] >= nums[r]:
+    if len(nums) > 2:
+        if nums[point] > nums[l] and nums[point] > nums[r]:
             return nums[point]
         else:
-            if nums[l] >= nums[point]:
+            if nums[l] > nums[r]:
                 return find_peak(nums[0:point+1])
-            if nums[r] >= nums[point]:
+            else:
                 return find_peak(nums[point:ln+1])
-    elif l < 0:
-        if r <= ln:
-            if nums[point] >= nums[r]:
-                return nums[point]
-    elif r > ln:
-        if l >= 0:
-            if nums[point] >= nums[l]:
-                return nums[point]
+    else:
+        if nums[0] > nums[1]:
+            return nums[0]
+        else:
+            return nums[1]
