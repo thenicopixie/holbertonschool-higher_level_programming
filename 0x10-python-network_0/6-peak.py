@@ -4,29 +4,29 @@
 
 def find_peak(list_of_integers):
     """go through list to find a peak"""
-    nums = list_of_integers
-    if nums is None or nums == []:
+    if list_of_integers is None or list_of_integers == []:
         return None
-    if len(nums) == 1:
-        return nums[0]
-    if len(set(nums)) == 1:
-        return nums[0]
-    ln = len(nums)
-    if ln % 2 != 0:
-        ln - 1
-    point = ln//2
-    l = point - 1
-    r = point + 1
-    if len(nums) > 2:
-        if nums[point] > nums[l] and nums[point] > nums[r]:
-            return nums[point]
+    if len(list_of_integers) == 1:
+        return list_of_integers[0]
+    if len(set(list_of_integers)) == 1:
+        return list_of_integers[0]
+    if len(list_of_integers) > 2:
+        if ((list_of_integers[len(list_of_integers)//2] > list_of_integers[(
+             len(list_of_integers)//2)-1]) and (list_of_integers[len(
+               list_of_integers)//2] > list_of_integers[(
+                 len(list_of_integers)//2)+1])):
+            return list_of_integers[len(list_of_integers)//2]
         else:
-            if nums[l] > nums[r]:
-                return find_peak(nums[0:point+1])
+            if (list_of_integers[(len(
+                list_of_integers)//2)-1] > list_of_integers[(
+                  len(list_of_integers)//2)+1]):
+                return (find_peak(list_of_integers[0:(
+                       len(list_of_integers)//2)+1]))
             else:
-                return find_peak(nums[point:ln+1])
+                return (find_peak(list_of_integers[len(
+                       list_of_integers)//2:len(list_of_integers)+1]))
     else:
-        if nums[0] > nums[1]:
-            return nums[0]
+        if list_of_integers[0] > list_of_integers[1]:
+            return list_of_integers[0]
         else:
-            return nums[1]
+            return list_of_integers[1]
