@@ -22,9 +22,9 @@ def find_peak(list_of_integers):
             return nums[point]
         else:
             if nums[l] > nums[r]:
-                return find_peak(nums[0:point+1])
+                return find_peak(nums[0:point])
             else:
-                return find_peak(nums[point:ln+1])
+                return find_peak(nums[point+1:ln+1])
     else:
         if nums[0] > nums[1]:
             return nums[0]
