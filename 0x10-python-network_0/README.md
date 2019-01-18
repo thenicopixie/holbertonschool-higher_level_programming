@@ -28,6 +28,8 @@ File | Description
 4-header.sh | Bash script that takes in a URL as an arguments and sends a `GET` request to the URL. Displays the body of the response.
 5-post\_params.sh | Bash script that takes a URL and sends a `POST` request to the passed URL. Displays the body of the response.
 6-peak.py, 6-peak.txt | Technical interview preparation. Not allowed to google anything. Whiteboard first. A function that finds a peak in a list of unsorted integers.
+100-status\_code.sh | Bash script that sends a request to a URL passed as an argument, and displays the status code of the response. Not allowed to use any pipe, redirection, etc. Not allowed to use `;` and `&&`. Must use `curl`.
+101-post\_json.sh | Bash script that sends JSON `POST` request to a URL. Displays the body of the response.
 
 #### Author
 Nicole Swanson - [@Nicolette_Swan](https://twitter.com/Nicolette_Swan)
