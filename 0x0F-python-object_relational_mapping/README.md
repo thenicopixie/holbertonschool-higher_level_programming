@@ -29,6 +29,9 @@ $ python3
 '1.2.5'
 ```
 
+---
+File | Description
+-----|------------
 0-select_states.py | Script that lists all `states` from the database `hbtn_0e_0_usa`
 1-filter_states.py | Script that lists all `states` with a `name` starting with `N` from the database
 2-my_filter_states.py | Script that takes in an arguments and displays all values in the `states` tables of a database where `name` matches the argument
