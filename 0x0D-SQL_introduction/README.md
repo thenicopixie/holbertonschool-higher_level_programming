@@ -34,6 +34,10 @@ File | Description
 14-average.sql | Script that computes the score average of all records in the table of the database
 15-groups.sql | Script that lists the number of records with the same score in the table of the database
 16-no\_link.sql | Script that lists all records of the talbe of the database
+100-move\_to\_utf8.sql | Script that converts a database to UTF8 in a MySQL server
+101-avg\_temperatures.sql | Import in a databse a table. Script that displays the average temperature by city ordered by temperature.
+102-top\_city.sql | Import in a database a table dump. Script displays the top 3 cities temperatures during July and August ordered by temperature.
+103-max\_state.sql | Import in a database a table dump. Script that displays the max temperature of each state.
 
 #### Author
 Nicole Swanson - [@Nicolette_Swan](https://twitter.com/Nicolette_Swan)
