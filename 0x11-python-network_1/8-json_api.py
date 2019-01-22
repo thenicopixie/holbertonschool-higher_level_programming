@@ -11,9 +11,9 @@ if __name__ == "__main__":
     req = requests.post("http://0.0.0.0:5000/search_user", data={'q': q})
     try:
         info = req.json()
+        if info:
+            print("[{}] {}".format(info.get("id"), info.get("name")))
+        else:
+            print("No result")
     except:
         print("Not a valid JSON")
-    if info:
-        print("[{}] {}".format(info.get("id"), info.get("name")))
-    else:
-        print("No result")
