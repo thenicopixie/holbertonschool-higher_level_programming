@@ -1,7 +1,7 @@
 #!/usr/bin/node
 let len = process.argv.length;
 
-function sorted(a, b) {
+function sorted (a, b) {
   return (a - b);
 }
 if (len === 2 || len === 3) {
