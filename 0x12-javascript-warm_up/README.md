@@ -16,6 +16,27 @@
 - How to manipulate dictionary
 - How to import a file
 
+## Install Node 6
+
+```
+$ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+$ sudo apt-get install -y nodejs
+```
+
+## Install semi-standard
+
+```
+$ sudo npm install semistandard --global
+```
+
+Additional installing if previous install fail:
+
+```
+$ sudo npm install npm@latest -g
+$ npm install -g n
+$ n latest
+```
+
 ---
 File | Description
 -----|------------
