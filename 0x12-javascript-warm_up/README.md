@@ -25,6 +25,8 @@ $ sudo apt-get install -y nodejs
 
 ## Install semi-standard
 
+[Documentation](https://github.com/Flet/semistandard)
+
 ```
 $ sudo npm install semistandard --global
 ```
