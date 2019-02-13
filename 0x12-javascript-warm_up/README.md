@@ -31,7 +31,7 @@ $ sudo apt-get install -y nodejs
 $ sudo npm install semistandard --global
 ```
 
-Additional installing if previous install fail:
+#### Additional installing if previous install fails:
 
 ```
 $ sudo npm install npm@latest -g
