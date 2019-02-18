@@ -1,5 +1,5 @@
 #!/usr/bin/node
-/* Class that defines a Rectangle. 
+/* Class that defines a Rectangle.
 Initialize the instance attribute width with the value w
 Initialize the instance attribute height with the value h
 */
