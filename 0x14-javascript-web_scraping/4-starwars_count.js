@@ -4,7 +4,7 @@ the character "Wedge Antilles" is present */
 const request = require('request');
 let url = process.argv[2];
 let wedge = 'https://swapi.co/api/people/18/';
-request.get(url, function (err, res, body) {
+request(url, function (err, res, body) {
   if (err) { console.log(err); }
   let response = JSON.parse(body).results;
   let count = 0;
