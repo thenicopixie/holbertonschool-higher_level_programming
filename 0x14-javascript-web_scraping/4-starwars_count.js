@@ -11,7 +11,7 @@ request(url, function (err, res, body) {
     for (let i = 0; i < result.length; i++) {
       let people = result[i].characters;
       for (let j = 0; j < people.length; j++) {
-        if (people[j] === wedge) {
+        if (people[j].indexOf(wedge) > -1) {
           count++;
         }
       }
