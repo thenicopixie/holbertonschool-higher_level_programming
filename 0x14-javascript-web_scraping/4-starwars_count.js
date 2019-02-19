@@ -5,9 +5,9 @@ const request = require('request');
 const url = process.argv[2];
 request(url, function (err, res, body) {
   const wedge = 'https://swapi.co/api/people/18/';
+  let count = 0;
   if (err) { console.log(err); } else {
     let result = JSON.parse(body).results;
-    let count = 0;
     for (let i = 0; i < result.length; i++) {
       let people = result[i].characters;
       for (let j = 0; j < people.length; j++) {
@@ -16,6 +16,6 @@ request(url, function (err, res, body) {
         }
       }
     }
-    console.log(count);
   }
+  console.log(count);
 });
