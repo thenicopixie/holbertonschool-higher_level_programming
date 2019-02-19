@@ -8,10 +8,9 @@ request(url, function (err, res, body) {
   let count = 0;
   if (err) { console.log(err); } else {
     let result = JSON.parse(body).results;
-    for (let i = 0; i < result.length; i++) {
-      let people = result[i].characters;
-      for (let j = 0; j < people.length; j++) {
-        if (people[j].indexOf(wedge) > -1) {
+    for (let i of result) {
+      for (let j of i.characters) {
+        if (j.indexOf(wedge) > -1) {
           count++;
         }
       }
