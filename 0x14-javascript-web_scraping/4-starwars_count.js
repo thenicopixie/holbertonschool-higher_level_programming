@@ -12,7 +12,7 @@ request(url, function (err, res, body) {
       let people = result[i].characters;
       for (let j = 0; j < people.length; j++) {
         if (people[j] === wedge) {
-          count += 1;
+          count++;
         }
       }
     }
