@@ -6,14 +6,15 @@ let url = process.argv[2];
 let wedge = 'https://swapi.co/api/people/18/';
 request.get(url, function (err, res, body) {
   if (err) { console.log(err); }
-  let people = JSON.parse(body).results[0].characters;
-  for (let i = 0; i < people.length; i++) {
-    if (people[i] === wedge) {
-      request.get(people[i], function (err, res, body) {
-        if (err) { console.log(err); }
-        let wA = JSON.parse(body).films;
-        console.log(wA.length);
-      });
+  let response = JSON.parse(body).results;
+  let count = 0;
+  for (let i = 0; i < response.length; i++) {
+    let characters = response[i].characters;
+    for (let j = 0; j < characters.length; j++) {
+      if (characters[j] === wedge) {
+        count += 1;
+      }
     }
   }
+  console.log(count);
 });
